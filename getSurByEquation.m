@@ -3,8 +3,8 @@
 %         i@finalobject.cn
 %         https://github.com/finalObject
 % @date 2017年4月1日 16:50:21
-% @version 0.1
-
+% @version 1.0
+% 这个函数是根据已知球面方程得出球面，percision控制精度
 function [x,y,z]=getSurByEquation(percision)
     startP = -29.5;
     endP = 30.5;
