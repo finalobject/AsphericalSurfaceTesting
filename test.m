@@ -1,2 +1,6 @@
-[x1,y1,z1]=getSurByEquation(0.0545);
-[x2,y2,z2]=getSurByPCD();
+clear;
+clc;
+[x1,y1,z1]=getSurByEquation(0.1);
+z1=zeros(601,601);
+phase=getPhase(x1,y1,z1);
+imshow(phase,[]);
