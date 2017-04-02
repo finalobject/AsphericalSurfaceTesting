@@ -25,5 +25,5 @@ function [x,y,z]=getSurByEquation(percision)
     end
     
     
-    mesh(x,y,z);
+    %mesh(x,y,z);
 end

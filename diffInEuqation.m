@@ -1,5 +1,7 @@
 %感觉公式画出来看不出来是两个球面
 %看看具体的差距
+clear;
+clc;
 startP = -29.5;
 endP = 30.5;
 percision = 0.1;
@@ -14,3 +16,4 @@ for ii = 1:length(x)
         z(ii,jj)=z1-z2;
     end
 end
+mesh(x,y,z);
