@@ -13,7 +13,7 @@ function phase=getPhase(x,y,z)
     %光源坐标，单位毫米
     locX = 0.5;
     locY = 0.5;
-    locZ = 10000000;
+    locZ = 100;
     
     [lx,ly] = size(z);
     phase = zeros(lx,ly);
