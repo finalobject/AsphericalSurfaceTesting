@@ -29,7 +29,7 @@
     k0 = ones(1,6);  %% k 的运行初值，不会影响最终结果
     
     F = @(k,xdata) k(1)*xdata(:,1).^2 + k(2)*xdata(:,1) + k(3)*xdata(:,2).^2 + k(4)*xdata(:,2) + k(5)*xdata(:,3) + k(6);
-    [k,resnorm]=lsqcurvefit(F,k0,xdata,ydata);
+    k=lsqcurvefit(F,k0,xdata,ydata);
 % step2：椭圆参数求解
     x1 = -k(2)/k(1)/2;
     y1 = -k(4)/k(3)/2;
