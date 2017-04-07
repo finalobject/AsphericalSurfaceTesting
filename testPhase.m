@@ -8,6 +8,8 @@
 clear;
 clc;
 [x1,y1,z1]=getSurByEquation(0.1);
-%z1=zeros(601,601);
+z1=zeros(601,601);
 phase=getPhase(x1,y1,z1);
+%mesh(phase);
 imshow(phase,[]);
+
