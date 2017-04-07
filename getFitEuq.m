@@ -4,7 +4,7 @@
 %         https://github.com/finalObject
 % @date 2017年4月7日 14:49:35
 % @version 0.5
-function k=getFitEuq(xm,ym,zm)
+function kk=getFitEuq(xm,ym,zm)
     % 待拟合方程：F = z^2 = (-c^2/a^2*x^2) + (c^2/a^2*2*x1*x) + (- c^2/b^2*y^2) +
     %                      (c^2/b^2*2*y1*y) + (2*z1*z) +
     %                      (-c^2/a^2*x1^2 - c^2/b^2*y1^2 - z1^2 + c^2)
@@ -15,7 +15,7 @@ function k=getFitEuq(xm,ym,zm)
     % k(4) = c^2/b^2*2*y1
     % k(5) = 2*z1
     % k(6) = -c^2/a^2*x1^2 - c^2/b^2*y1^2 - z1^2 + c^2
-    %返回的是一个一维数组，储存六个参数
+    %返回的是一个一维数组，储存x1y1z1abc
     [x,y,z]=extract(xm,ym,zm);
     x=x';y=y';z=z';
     xdata = [x,y,z];
@@ -31,6 +31,12 @@ function k=getFitEuq(xm,ym,zm)
     c = sqrt(z1^2 + k(6) - k(1)*x1^2 - k(3)*y1^2);
     a = c/sqrt(-k(1));
     b = c/sqrt(-k(3));
+    kk(1)=x1;
+    kk(2)=y1;
+    kk(3)=z1;
+    kk(4)=a;
+    kk(5)=b;
+    kk(6)=c;
 end
 %这个函数完成点的提取，并吧数据转化成一维数组
 function [x,y,z]=extract(xm,ym,zm)
