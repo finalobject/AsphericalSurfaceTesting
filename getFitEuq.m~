@@ -17,7 +17,6 @@ function k=getFitEuq(xm,ym,zm)
     % k(6) = -c^2/a^2*x1^2 - c^2/b^2*y1^2 - z1^2 + c^2
     %返回的是一个一维数组，储存六个参数
     [x,y,z]=extract(xm,ym,zm);
-    x=x';y=y';z=z';
     xdata = [x,y,z];
     ydata = z.^2;  %% 先把 z 值平方，再进行拟合
     k0 = ones(1,6);  %% k 的运行初值，不会影响最终结果
@@ -36,22 +35,16 @@ end
 function [x,y,z]=extract(xm,ym,zm)
     side = 10;%默认提取10*10个点，考虑修改
     sizeX = size(xm);
-    loc = round(linspace(1,sizeX(1),side));
+    loc = linspace(1,sizeX(1),side*side);
     x = zeros(1,side*side);
     y = zeros(1,side*side);
     z = zeros(1,side*side);
     for i=1:side*side
         locX = mod(i,side);
-        locY = (i-locX)/side+1;
-        if locX == 0
-            locX = 10;
-            locY = locY-1;
-        end
-        tmpX = loc(locX);
-        tmpY = loc(locY);
-        x(i) = xm(tmpX,tmpY);
-        y(i) = ym(tmpX,tmpY);
-        z(i) = zm(tmpX,tmpY);
+        locY = (i-locX)/side;
+        x = xm[locX][locY];
+        y = ym[locX][];
+        z = zm[][];
     end
 end
 
