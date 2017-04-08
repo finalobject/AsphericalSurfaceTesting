@@ -16,6 +16,6 @@ function [ x1,y1,z1 ] = getSutByFit( k ,side)
     startP = -29.5;
     endP = 30.5;
     [x1,y1] = meshgrid(linspace(startP,endP,side));
-    
+    z1=((x1-k(1))/k(4))^2;
 end
 

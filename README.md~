@@ -1,0 +1,6 @@
+# aspherical surface testing
+##球面获取
+目前有三个函数，分别是
+*getSurByPCD：通过现用点云数据获取，
+*getSurByEquation,
+*getSUrByFit,
