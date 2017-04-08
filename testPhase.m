@@ -7,8 +7,9 @@
 % ²âÊÔ½á¹û¼ûdata
 clear;
 clc;
-[x1,y1,z1]=getSurByEquation(0.1);
-z1=zeros(601,601);
+%[x1,y1,z1]=getSurByEquation(0.1);
+[x1,y1,z1]=getSurByPCD();
+%z1=zeros(601,601);
 phase=getPhase(x1,y1,z1);
 %mesh(phase);
 imshow(phase,[]);

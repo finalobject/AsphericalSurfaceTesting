@@ -4,10 +4,12 @@
 %         https://github.com/finalObject
 % @date 2017Äê4ÔÂ7ÈÕ 21:51:22
 % @version 0.1
-%8.7076,0.0407,20.6988
+%Euqation0.1:(8.7076,-12.4373),0.0407,20.6988
+%PCD:(-11.3015,8.7044),0.5,16.5284
 clear;
 clc;
-[x1,y1,z1]=getSurByEquation(0.1);
+%[x1,y1,z1]=getSurByEquation(0.1);
+[x1,y1,z1]=getSurByPCD();
 k=getFitEuq(x1,y1,z1);
 x1=k(1);
 y1=k(2);

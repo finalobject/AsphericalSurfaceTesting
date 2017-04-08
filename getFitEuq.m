@@ -15,6 +15,7 @@ function kk=getFitEuq(xm,ym,zm)
     % k(4) = c^2/b^2*2*y1
     % k(5) = 2*z1
     % k(6) = -c^2/a^2*x1^2 - c^2/b^2*y1^2 - z1^2 + c^2
+    % 前提是拟合出来的椭球面，六个参数才能正常提取，因为可能出现复数，这样的话就考虑直接返回k
     %返回的是一个一维数组，储存x1y1z1abc
     [x,y,z]=extract(xm,ym,zm);
     x=x';y=y';z=z';
