@@ -12,9 +12,9 @@ function phase=getPhase(x,y,z)
     lamda = 632.8/1000/1000;
     %光源坐标，单位毫米
     
-    locX =  8.7076;
-    locY =  0.0407;
-    locZ = -12.4373;
+    locX =  0;
+    locY =  0;
+    locZ = 1000;
     
     [lx,ly] = size(z);
     phase = zeros(lx,ly);
@@ -23,7 +23,8 @@ function phase=getPhase(x,y,z)
             tmpX=x(ii,jj);
             tmpY=y(ii,jj);
             tmpZ=z(ii,jj);
-            phase(ii,jj)= mod(getDis(tmpX,tmpY,tmpZ,locX,locY,locZ),lamda)/lamda*2*pi;
+            %phase(ii,jj)=getDis(tmpX,tmpY,tmpZ,locX,locY,locZ);
+            phase(ii,jj)= mod(2*getDis(tmpX,tmpY,tmpZ,locX,locY,locZ),lamda)/lamda*2*pi;
         end
     end
 end
