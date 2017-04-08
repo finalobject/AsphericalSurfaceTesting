@@ -8,8 +8,8 @@
 %PCD:(-11.3015,8.7044),0.5,16.5284
 clear;
 clc;
-%[x1,y1,z1]=getSurByEquation(0.1);
-[x1,y1,z1]=getSurByPCD();
+[x1,y1,z1]=getSurByEquation(0.1);
+%[x1,y1,z1]=getSurByPCD();
 k=getFitEuq(x1,y1,z1);
 x1=k(1);
 y1=k(2);
