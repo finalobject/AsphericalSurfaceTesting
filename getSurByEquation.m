@@ -3,17 +3,20 @@
 %         i@finalobject.cn
 %         https://github.com/finalObject
 % @date 2017年4月1日 16:50:21
-% @version 
+% @version 2.0
+% 输入参数默认是正方形，xy范围可以不同
 % 这个函数是根据已知球面方程得出球面，percision控制精度
-function [x,y,z]=getSurByEquation(percision,startP,endP)
+function [x,y,z]=getSurByEquation(percision,startX,startY,side)
     if (nargin==1)
-        startP=-29.5;
-        endP=30.5;
+        startX=-29.5;
+        startY=-29.5;
+        side=60;
     end
 
     % 设置计算区域 ，保证运算速度
-
-    [x,y] = meshgrid(startP:percision:endP);
+    x = startX:percision:(startX+side);
+    y = startY:percision:(startY+side);
+    [x,y] = meshgrid(x,y);
     z=zeros(length(x),length(x));
     for ii = 1:length(x)
         for jj = 1:length(y)
