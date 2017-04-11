@@ -18,6 +18,7 @@ function [ x1,y1,z1 ] = getSurByFit( k ,percision,startP,endP)
         endP=30.5;
     end
     [x1,y1] = meshgrid(startP:percision:endP);
+    side = length(startP:percision:endP);
     z1 = zeros(side,side);
     for ii=1:side
         for jj=1:side
