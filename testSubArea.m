@@ -15,7 +15,7 @@ col = 9;
     col = 9;
     subSide = (endP-startP)/7;
     subSize = length(0:percision:subSide);
-    i=8;j=4;
+    i=7;j=4;
     [x,y]=getXY(i,j,endP,startP,col,subSide);
             [x1,y1,z1]=getSurByEquation(percision,x-subSide/2,y-subSide/2,subSide);
             k=getFitEuq(x1,y1,z1);
