@@ -4,7 +4,7 @@
 %         https://github.com/finalObject
 % @date 2017年4月7日 14:49:35
 % @version 0.5
-function kk=getFitEuq(xm,ym,zm)
+function k=getFitEuq(xm,ym,zm)
     % 待拟合方程：F = z^2 = (-c^2/a^2*x^2) + (c^2/a^2*2*x1*x) + (- c^2/b^2*y^2) +
     %                      (c^2/b^2*2*y1*y) + (2*z1*z) +
     %                      (-c^2/a^2*x1^2 - c^2/b^2*y1^2 - z1^2 + c^2)

@@ -22,14 +22,19 @@ function subs=getSubArea(percision)
     subs(1:subSize,1:subSize,1:row,1:col)=0; 
     for i = 1:row
         for j =1:col
-            if (mod(j,2)==1)&i==row
+            if (mod(j,2)==1)&&i==row
                 subs(:,:,i,j)=0;
                 continue;
             end
+            neg = 1;
+            if (j==4&&i~=5)
+                neg = -1;
+            end
+            
             [x,y]=getXY(i,j,endP,startP,col,subSide);
             [x1,y1,z1]=getSurByEquation(percision,x-subSide/2,y-subSide/2,subSide);
             k=getFitEuq(x1,y1,z1);
-            [x2,y2,z2]=getSurByFit(k,percision,x-subSide/2,y-subSide/2,subSide);
+            [~,~,z2]=getSurByFit(k,percision,x-subSide/2,y-subSide/2,subSide,neg);
             diff=z1-z2;
             
             tmp = max(max(diff));

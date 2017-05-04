@@ -6,7 +6,7 @@
 % @version 2.0
 % 通过拟合出来的椭球数据重建表面
 % 输入参数默认是正方形，xy范围可以不同
-function [ x1,y1,z1 ] = getSurByFit( k ,percision,startX,startY,side,neg)
+function [ x1,y1,z1 ] = getSurByFit( k ,percision,startX,startY,side)
     % k(1)=x1;
     % k(2)=y1;
     % k(3)=z1;
@@ -29,7 +29,6 @@ function [ x1,y1,z1 ] = getSurByFit( k ,percision,startX,startY,side,neg)
         startX=-29.5;
         startY=-29.5;
         side=60;
-        neg=1;
     end
     x1 = startX:percision:(startX+side);
     y1 = startY:percision:(startY+side);
@@ -41,7 +40,7 @@ function [ x1,y1,z1 ] = getSurByFit( k ,percision,startX,startY,side,neg)
             %z1(ii,jj)=-sqrt(1-((x1(ii,jj)-k(1))/k(4))^2-((y1(ii,jj)-k(2))/k(5))^2)*k(6)+k(3);
             b=-k(5);
             c=-(k(1)*x1(ii,jj)*x1(ii,jj)+k(2)*x1(ii,jj)+k(3)*y1(ii,jj)*y1(ii,jj)+k(4)*y1(ii,jj)+k(6));
-            z1(ii,jj)=(-b-sqrt(b^2-4*c)*neg)/2;
+            z1(ii,jj)=()/2;
         end
     end
     
