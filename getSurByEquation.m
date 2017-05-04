@@ -32,6 +32,6 @@ function [x,y,z]=getSurByEquation(percision,startX,startY,side)
         end
     end
     
-    
+    z=z./20;
     %mesh(x,y,z);
 end
