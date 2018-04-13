@@ -9,12 +9,12 @@
 % 测试平面的时候表现很好，但是测试曲面的时候感觉到处都是噪声
 function phase=getPhase(x,y,z)
     %光源波长，单位毫米
-    lamda = 632.8/1000/1000;
+    lamda = 632.8/1000/10;
     %光源坐标，单位毫米
     
     locX =  0;
     locY =  0;
-    locZ = 1000;
+    locZ = 900;
     
     [lx,ly] = size(z);
     phase = zeros(lx,ly);

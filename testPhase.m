@@ -12,7 +12,7 @@ clc;
 
 [xm,ym,zm]=getSurByEquation(0.1);
 k=getFitEuq(xm,ym,zm);
-[x1,y1,z1]=getSurByFit(k,600);
+[x1,y1,z1]=getSurByFit(k,0.1);
 
 %z1=zeros(601,601);
 phase=getPhase(x1,y1,z1);

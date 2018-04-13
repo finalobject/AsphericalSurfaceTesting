@@ -1,13 +1,13 @@
-%subs=getSubArea(0.1);
+subs=getSubArea(0.1);
 row = 8;
 col = 9;
 
-%for i=1:row
- %   for j=1:col
-  %      subplot(row,col,j+col*(i-1));imshow(subs(:,:,i,j),[]);
-%
- %   end
-%end
+for i=1:row
+    for j=1:col
+        subplot(row,col,j+col*(i-1));imshow(subs(:,:,i,j),[]);
+
+    end
+end
     percision = 0.1;
     startP = -29.5;
     endP = 30.5;
